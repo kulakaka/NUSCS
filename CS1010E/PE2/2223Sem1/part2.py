@@ -25,7 +25,9 @@ def readmap(filename):
     return m
 
 def island_area(filename,prince):
-  
+    stack=[]
+    visited=[]
+    area = 1
     map = readmap(filename)
     for x in range(len(map)):
         for y in range(len(map[x])):
@@ -33,26 +35,32 @@ def island_area(filename,prince):
                 r=x
                 c=y 
 
+    DFS_island(map,[r,c],stack,visited)
 
-    return marked
-
-def DFS_island(map,startpoint):
+def DFS_island(map,startpoint,stack,visited):
     r,c = startpoint
-    stack=[]
-    visited=[]
-    if map[r+1,c] and [r-1,c] and [r,c+1] and [r,c-1]=='W':
-        return 
-    if map[r+1][c] =='.':
-        stack.append([r+1,c])
-    if map[r-1][c]=='.':
-        stack.append([r-1,c])
-    if map[r][c+1]=='.':
-        stack.append([r,c+1])
-    if map[r-1][c-1]=='.':
-        stack.append([r,c-1])
-
-    for i in stack:
-        print()
    
+    if [r,c] not in stack and map[r+1][c] =='.':
+        stack.append([r+1,c])
+        #area+=1
+    if [r,c] not in stack and map[r-1][c]=='.':
+        stack.append([r-1,c])
+        #area+=1
+    if [r,c] not in stack and map[r][c+1]=='.':
+        stack.append([r,c+1])
+        #area+=1
+    if [r,c] not in stack and map[r-1][c-1]=='.':
+        stack.append([r,c-1])
+        #area+=1
+    
+    visited.append([r,c])
+
+    
+    return   DFS_island(map,[i[0],i[1]],stack,visited)
+
+
+
+    return len(visited)
+
 print(island_area("map1.txt","B"))
 
