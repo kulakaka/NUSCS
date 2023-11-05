@@ -52,7 +52,7 @@ def DFS_island(map,startpoint):
         stack.append([r,c-1])
 
     for i in stack:
-        
+        print()
    
 print(island_area("map1.txt","B"))
 
