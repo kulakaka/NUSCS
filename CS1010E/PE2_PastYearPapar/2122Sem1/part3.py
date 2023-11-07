@@ -21,3 +21,5 @@ def sum_of_3(L, n):
 print(sum_of_3(tuple(range(1,4000)),11995))
 
 
+
+

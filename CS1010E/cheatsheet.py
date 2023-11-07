@@ -46,3 +46,29 @@ def quicksort(arr):
     right = [x for x in arr if x > pivot]
 
     return quicksort(left) + middle + quicksort(right)
+
+
+
+# Define a function to square a number
+def square(x):
+    return x ** 2
+
+# Create a list of numbers
+numbers = [1, 2, 3, 4, 5]
+
+# Use map() to apply the square function to each number in the list
+squared_numbers = map(square, numbers)
+
+# Convert the result to a list
+squared_numbers_list = list(squared_numbers)
+
+print(squared_numbers_list)  # Output: [1, 4, 9, 16, 25]
+
+
+numbers = [1, 2, 3, 4, 5]
+
+# Use map() with a lambda function to square each number
+squared_numbers = map(lambda x: x ** 2, numbers)
+squared_numbers_list = list(squared_numbers)
+
+print(squared_numbers_list)  # Output: [1, 4, 9, 16, 25]
