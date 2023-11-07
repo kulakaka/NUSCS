@@ -5,7 +5,7 @@ def child_DNA(d):
         out = d%10
         return out*child_DNA((d-out)//10)
     
-print(child_DNA(9786))
+print(child_DNA(16632))
 
 
 def parent_mutated_DNA(d):
@@ -20,6 +20,18 @@ def parent_mutated_DNA(d):
     
     return min(li)
 
-print(parent_mutated_DNA(3024))
+print(parent_mutated_DNA(16632))
 
 
+def isMartian(d):
+    pl = [2,3,5,7]
+    for i in pl:
+        while d%i==0:
+            d = d/i
+    if d>9:
+        return False
+    else:
+        return True
+
+
+print(isMartian(24))
