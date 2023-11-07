@@ -1,8 +1,7 @@
 def min_no_of_turns(L):
     lis = list(L)
-   
-    count=0
 
+    count=0
     minu = min(lis)
     while len(lis)!=0:
         

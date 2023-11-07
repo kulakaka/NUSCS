@@ -51,15 +51,9 @@ def DFS_island(map,startpoint,stack,visited):
     
     if[r,c] not in visited:
         visited.append([r,c])
-
     
     return DFS_island(map,stack[0],stack[1:],visited)
     
-
-
-
-#print(island_area("map1.txt","C"))
-
 
 def prince_map(filename,prince):
     stack=[]
